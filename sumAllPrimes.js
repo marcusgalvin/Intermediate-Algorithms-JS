@@ -1,33 +1,26 @@
 function sumPrimes(num) {
-  var res = 0;
+  //variable to return the sum of all primes
+  var sum = 0;
 
-  // Function to get the primes up to max in an array
-  function getPrimes(max) {
-    var sieve = [];
-    var i;
-    var j;
-    var primes = [];
-    for (i = 2; i <= max; ++i) {
-      if (!sieve[i]) {
-        // i has not been marked -- it is prime
-        primes.push(i);
-        for (j = i << 1; j <= max; j += i) {
-          sieve[j] = true;
-        }
+  //get an iterator, and start at 2 since all primes must be greater than 1
+  //write function checkPrimes to check each number for prime or not
+  function checkPrime(i) {
+    for (var j = 2; j < i; j++) {
+      //if i is divisible by j then the number should NOT be prime
+      if (i % j === 0) {
+        return false;
       }
     }
-
-    return primes;
+    return true;
   }
 
-  // Add the primes
-  var primes = getPrimes(num);
-  for (var p = 0; p < primes.length; p++) {
-    res += primes[p];
+  //now a for loop to check if the number we want is correct, then add it too the sum array
+  for (var i = 2; i <= num; i++) {
+    if (checkPrime(i)) {
+      sum += i;
+    }
   }
-
-  return res;
+  return sum;
+  // returns 17 - the correct answer.
 }
-
-// test here
 sumPrimes(10);
