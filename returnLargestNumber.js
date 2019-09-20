@@ -1,7 +1,6 @@
-//set a results variable for the end result
-var results = [];
-
 function largestOfFour(arr) {
+  //set a results variable for the end result
+  var results = [];
   //set variable to each substring in the array
   //use Math.max to find the highest number in each sub array
   //push the highest number from each into a variable called results
