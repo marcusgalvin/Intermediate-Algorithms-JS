@@ -31,6 +31,7 @@ function largestOfFour(arr) {
 
   console.log(results);
 
+  //return
   return results;
 }
 
