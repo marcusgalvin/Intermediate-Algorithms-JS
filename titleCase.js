@@ -1,19 +1,16 @@
 function titleCase(str) {
+  var answer = [];
   //check test case 2
-  console.log(str);
+  // console.log(str);
 
-  var result = "";
   //first make every word in str lower case to make this a little easier
-  var lowerCase = str.toLowerCase();
+  //split into an array
+  var split = str.toLowerCase().split(" ");
   // console.log(lowerCase)
-
-  //split into array
-  var split = lowerCase.split(" ");
-  // console.log(split)
 
   for (var i = 0; i < split.length; i++) {
     // next locate the first char in each substring
-    //this variable iterates through each substring and then acces the first char by using [0]
+    //this variable iterates through each substring and then accesses the first char by using [0]
     var firstLetterFinder = split[i][0];
     // console.log(firstLetterFinder)
 
@@ -23,25 +20,21 @@ function titleCase(str) {
 
     //concatinate the new capital letter with each substring
     var concatCapital = capital.concat(split[i]);
+    // console.log(split[i])
     // console.log(concatCapital)
 
-    var test = concatCapital.slice(2);
-    // console.log("test",test)
+    var sliceIndex = concatCapital.slice(2);
+    // console.log("test:",sliceIndex)
 
-    var testConCat = capital.concat(test);
+    var testConCat = capital.concat(sliceIndex);
     // console.log(testConCat)
 
-    var results = testConCat.toString();
-    console.log(results);
-
-    //now we need to remove the second index of each substring
-    // console.log(concatCapital[1][0])
-
-    // finalResult = concatCapital.slice(1);
-    // console.log(finalResult)
+    answer.push(testConCat);
   }
+  var res = answer.join(" ");
+  console.log(res);
 
-  return results;
+  return res;
 }
 
 titleCase("sHoRt AnD sToUt");
