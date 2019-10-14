@@ -10,6 +10,7 @@
 
 function dropElements(arr, func) {
   //while the function is false in arr index 0
+  var array = [];
   while (!func(arr[0])) {
     //basically just keep shifting in the loop until the correct element is in position 0
     arr.shift();
